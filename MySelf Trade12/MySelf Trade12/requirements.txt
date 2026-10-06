@@ -1,0 +1,12 @@
+# 전체 버전 (main.py - 대시보드 포함)
+flask>=3.0
+requests>=2.31
+openpyxl>=3.1
+tzdata>=2024.1
+websocket-client>=1.7   # 실시간 시세(WebSocket). 없으면 2초 간격 조회로 동작
+
+# 간단 버전 (autotrade.py)
+pybit>=5.8
+python-dotenv>=1.0
+google-genai>=1.0
+schedule>=1.2

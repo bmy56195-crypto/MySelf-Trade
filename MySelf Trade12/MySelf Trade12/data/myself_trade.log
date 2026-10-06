@@ -1,0 +1,161 @@
+2026-10-05 23:07:59 [INFO] 매매 엔진을 시작했습니다.
+2026-10-05 23:07:59 [INFO] Myself Trade 시작. 거래 모드: 모의 투자 (실제 주문 없음)
+2026-10-05 23:07:59 [INFO] 대시보드: http://127.0.0.1:8000  (끝내려면 이 창에서 Ctrl+C)
+2026-10-05 23:07:59 [INFO] Gemini API 키가 없어 규칙 기반 전략으로 동작합니다. 대시보드의 API 연결 화면에서 키를 넣으면 AI 분석이 켜집니다.
+2026-10-05 23:07:59 [INFO] websocket-client가 설치되어 있지 않아 2초 간격 REST 조회로 시세를 받습니다. (pip install websocket-client 로 실시간 연결을 켤 수 있습니다)
+2026-10-05 23:07:59 [INFO] 새 거래일 시작: 2026-10-06 (시작 자산 1000.00 USDT)
+2026-10-05 23:08:49 [INFO] 자동 매매 켜짐
+2026-10-05 23:08:53 [INFO] 진입: BTC short x26 수량 0.005 @ 85229 (손절 85501.8 / 익절 84734.6)
+2026-10-05 23:12:16 [INFO] Gemini 연결 확인: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-05 23:15:07 [WARNING] 차트 시세 조회 실패: Bybit 오류 10006: Too many visits. Exceeded the API Rate Limit.
+2026-10-05 23:18:35 [WARNING] 차트 시세 조회 실패: Bybit 오류 10006: Too many visits. Exceeded the API Rate Limit.
+2026-10-05 23:23:58 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-05 23:23:58 [INFO] 진입: DOGE short x37 수량 39273.0 @ 0.0941912 (손절 0.09462 / 익절 0.09284)
+2026-10-05 23:23:58 [INFO] 추가 매수: BTC short 2/3회차, 수량 0.005 -> 0.01, 평균 단가 85206 (손절 85461.6 / 익절 84694.8)
+2026-10-05 23:39:00 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-05 23:44:39 [WARNING] 시세 조회 실패: Bybit 연결 실패: HTTPSConnectionPool(host='api.bybit.com', port=443): Read timed out. (read timeout=10.0)
+2026-10-05 23:44:49 [WARNING] 차트 시세 조회 실패: Bybit 연결 실패: HTTPSConnectionPool(host='api.bybit.com', port=443): Read timed out. (read timeout=10.0)
+2026-10-05 23:44:49 [WARNING] 차트 시세 조회 실패: Bybit 연결 실패: HTTPSConnectionPool(host='api.bybit.com', port=443): Read timed out. (read timeout=10.0)
+2026-10-05 23:44:50 [ERROR] 엔진 순환 중 오류: Bybit 연결 실패: HTTPSConnectionPool(host='api.bybit.com', port=443): Max retries exceeded with url: /v5/market/tickers?category=linear&symbol=BTCUSDT (Caused by NameResolutionError("HTTPSConnection(host='api.bybit.com', port=443): Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 989, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 246, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.bybit.com', port=443): Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.bybit.com', port=443): Max retries exceeded with url: /v5/market/tickers?category=linear&symbol=BTCUSDT (Caused by NameResolutionError("HTTPSConnection(host='api.bybit.com', port=443): Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\bybit_api.py", line 94, in _request
+    response = self.session.request(method, url, data=body, headers=headers, timeout=self.timeout)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python314\site-packages\requests\adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.bybit.com', port=443): Max retries exceeded with url: /v5/market/tickers?category=linear&symbol=BTCUSDT (Caused by NameResolutionError("HTTPSConnection(host='api.bybit.com', port=443): Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\trade_engine.py", line 129, in _run
+    self.step()
+    ~~~~~~~~~^^
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\trade_engine.py", line 225, in step
+    self._step()
+    ~~~~~~~~~~^^
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\trade_engine.py", line 241, in _step
+    equity = self._net_equity(broker, market, mode)[0]
+             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\trade_engine.py", line 420, in _net_equity
+    gross = broker.get_equity()
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\broker.py", line 48, in get_equity
+    fill = self._exit_fill(trade["side"], self.market.get_price(trade["symbol"]))
+                                          ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\bybit_api.py", line 141, in get_price
+    return self.get_ticker(symbol)["price"]
+           ~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\bybit_api.py", line 121, in get_ticker
+    result = self._request("GET", "/v5/market/tickers", {"category": CATEGORY, "symbol": symbol})
+  File "C:\Users\Admin\OneDrive\Desktop\새 폴더 (2)\MySelf Trade12\MySelf Trade12\bybit_api.py", line 96, in _request
+    raise BybitError(f"Bybit 연결 실패: {exc}") from exc
+bybit_api.BybitError: Bybit 연결 실패: HTTPSConnectionPool(host='api.bybit.com', port=443): Max retries exceeded with url: /v5/market/tickers?category=linear&symbol=BTCUSDT (Caused by NameResolutionError("HTTPSConnection(host='api.bybit.com', port=443): Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)"))
+2026-10-05 23:44:50 [WARNING] 차트 시세 조회 실패: Bybit 연결 실패: HTTPSConnectionPool(host='api.bybit.com', port=443): Max retries exceeded with url: /v5/market/kline?category=linear&symbol=BTCUSDT&interval=3&limit=5 (Caused by NameResolutionError("HTTPSConnection(host='api.bybit.com', port=443): Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)"))
+2026-10-05 23:44:50 [WARNING] 시세 조회 실패: Bybit 연결 실패: HTTPSConnectionPool(host='api.bybit.com', port=443): Max retries exceeded with url: /v5/market/tickers?category=linear&symbol=BTCUSDT (Caused by NameResolutionError("HTTPSConnection(host='api.bybit.com', port=443): Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)"))
+2026-10-05 23:54:03 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 00:09:39 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 호출 실패 (Gemini 서버 오류 (HTTP 503)). Google 서버가 혼잡할 때 나오는 일시적인 오류이며, API 키나 설정 문제가 아닙니다. 예비 모델 2개도 응답하지 않았습니다. 다음 판단 주기에 자동으로 다시 시도합니다.
+2026-10-06 00:24:36 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 호출 실패 (Gemini 서버 오류 (HTTP 503)). Google 서버가 혼잡할 때 나오는 일시적인 오류이며, API 키나 설정 문제가 아닙니다. 예비 모델 2개도 응답하지 않았습니다. 다음 판단 주기에 자동으로 다시 시도합니다.
+2026-10-06 00:35:05 [WARNING] Gemini 기본 모델 'gemini-3.8-flash'가 혼잡해 예비 모델 'gemini-3.5-flash'로 대신 호출했습니다.
+2026-10-06 00:35:05 [INFO] Gemini 연결 확인: Gemini API가 성공적으로 연결되었습니다 (모델 gemini-3.5-flash)
+2026-10-06 00:35:55 [WARNING] Gemini 계획 수립 실패, 규칙 기반 계획으로 대체합니다: Gemini가 제때 응답하지 않았습니다 (ReadTimeout)
+2026-10-06 00:36:26 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 4개)
+2026-10-06 00:37:24 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini가 제때 응답하지 않았습니다 (ReadTimeout)
+2026-10-06 00:38:13 [WARNING] 학습 자료 분석 실패 (유튜브 영상): Gemini 호출 실패 (Gemini 서버 오류 (HTTP 503)). Google 서버가 혼잡할 때 나오는 일시적인 오류이며, API 키나 설정 문제가 아닙니다. 예비 모델 3개도 응답하지 않았습니다. 다음 판단 주기에 자동으로 다시 시도합니다.
+2026-10-06 00:40:40 [INFO] 청산: BTC short 순손익 -3.6701 USDT (손절)
+2026-10-06 00:45:10 [INFO] 청산: DOGE short 순손익 -22.4499 USDT (손절)
+2026-10-06 00:47:43 [INFO] Gemini 기본 모델 'gemini-3.5-flash'가 다시 응답합니다.
+2026-10-06 00:47:43 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 7개)
+2026-10-06 00:49:32 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 4개)
+2026-10-06 00:50:11 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 4개)
+2026-10-06 00:50:49 [INFO] Gemini가 응답해 오늘의 계획을 AI 계획으로 바꿨습니다.
+2026-10-06 00:50:55 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 5개)
+2026-10-06 00:51:26 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 6개)
+2026-10-06 00:52:20 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 5개)
+2026-10-06 00:52:44 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 5개)
+2026-10-06 00:54:09 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 3개)
+2026-10-06 00:54:54 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 4개)
+2026-10-06 00:55:39 [INFO] 학습 자료 분석 완료: 유튜브 영상 (규칙 7개)
+2026-10-06 00:58:26 [WARNING] 학습 자료 분석 실패 (유튜브 영상): Gemini 호출 실패 (Gemini 서버 오류 (HTTP 503)). Google 서버가 혼잡할 때 나오는 일시적인 오류이며, API 키나 설정 문제가 아닙니다. 예비 모델 2개도 응답하지 않았습니다. 다음 판단 주기에 자동으로 다시 시도합니다.
+2026-10-06 00:58:42 [WARNING] 학습 자료 분석 실패 (유튜브 영상): Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 01:05:16 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 01:09:43 [WARNING] Gemini 계획 수립 실패, 규칙 기반 계획으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 01:09:43 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 01:24:44 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 01:39:44 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 01:54:48 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 02:09:48 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 02:15:08 [WARNING] BTCUSDT 지표 계산 실패: Bybit 오류 10006: Too many visits. Exceeded the API Rate Limit.
+2026-10-06 02:15:09 [WARNING] BTCUSDT 지표 계산 실패: Bybit 오류 10006: Too many visits. Exceeded the API Rate Limit.
+2026-10-06 02:15:12 [INFO] 직접 주문: BTC short x50 수량 0.55 @ 85879.6 (손절 86010.2 / 익절 85250.9)
+2026-10-06 02:20:48 [INFO] 청산: BTC short 순손익 -136.0337 USDT (손절)
+2026-10-06 02:24:56 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 02:39:57 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 02:51:31 [INFO] 매매 엔진을 시작했습니다.
+2026-10-06 02:51:31 [INFO] Myself Trade 시작. 거래 모드: 모의 투자 (실제 주문 없음)
+2026-10-06 02:51:31 [INFO] 대시보드: http://127.0.0.1:8000  (끝내려면 이 창에서 Ctrl+C)
+2026-10-06 02:51:32 [INFO] 실시간 시세(WebSocket)에 연결했습니다.
+2026-10-06 02:54:59 [WARNING] Gemini 판단 실패, 규칙 기반 전략으로 대체합니다: Gemini 사용량 제한에 걸렸습니다 (HTTP 429). 다음 판단 주기에 다시 시도합니다. 자주 나오면 설정의 판단 주기(분)를 늘려 주세요.
+2026-10-06 03:07:30 [INFO] 매매 엔진을 멈췄습니다.
+2026-10-06 03:07:30 [INFO] Myself Trade 종료. 거래소에 걸어 둔 손절/익절 주문은 그대로 남아 있습니다.
